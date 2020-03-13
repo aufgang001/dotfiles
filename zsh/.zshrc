@@ -108,8 +108,8 @@ export BIBINPUTS=/bib/:./
 ##-- vim color support --##
 export TERM=xterm-256color
 
-##-- generic open cmd --##
-alias o='xdg-open'
+##-- secure editor --##
+export NVIMSEC="nvim -u ~/.config/nvim/nvim_config/sec.vim"
 
 ##-- git shortcuts --##
 alias gs='git status'
@@ -127,6 +127,11 @@ alias vs="execute_me 'nvr --remote-send \"<C-\\><C-n>:call DoLcdToCurrentPath()<
 alias vv="execute_me 'nvr --remote-send \"<C-\\><C-n>:call DoLcdToCurrentPath()<CR>:vsplit \$2<CR>\"'"
 alias vt="execute_me 'nvr --remote-send \"<C-\\><C-n>:call DoLcdToCurrentPath()<CR>:tabe \$2<CR>\"'"
 alias vg='nvim-gtk'
+alias nvims="$NVIMSEC"
+
+##-- generic open cmd --##
+alias o='xdg-open'
+export EDITOR="$NVIMSEC"
 
 ##-- other stuff --##
 alias logout='gnome-session-quit'
